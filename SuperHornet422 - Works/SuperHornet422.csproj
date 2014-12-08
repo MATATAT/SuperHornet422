@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CDBF0608-F811-4E3A-9567-2C59AD685DE4}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SuperHornet422</RootNamespace>
+    <AssemblyName>SuperHornet422</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>SuperHornet422.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>SuperHornet422.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Interactivity, Version=3.7.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BackGround\background.xaml.cs">
+      <DependentUpon>background.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BackGround\GamePage.xaml.cs">
+      <DependentUpon>GamePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BackGround\movingCloudsBehavior.cs" />
+    <Compile Include="BackGround\SubmitScore.xaml.cs">
+      <DependentUpon>SubmitScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Database\DatabaseLogic.cs" />
+    <Compile Include="gameCode.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuItems\IntroPage.xaml.cs">
+      <DependentUpon>IntroPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuItems\Leaderboards.xaml.cs">
+      <DependentUpon>Leaderboards.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuItems\LevelSelect.xaml.cs">
+      <DependentUpon>LevelSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MenuItems\OptionSelect.xaml.cs">
+      <DependentUpon>OptionSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PowerUp\IPowerUp.cs" />
+    <Compile Include="Level.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ship\EnemyShip.cs" />
+    <Compile Include="Ship\EnemyShipFactory.cs" />
+    <Compile Include="Ship\EnemyShipWaveFactory.cs" />
+    <Compile Include="Ship\IEnemyShip.cs" />
+    <Compile Include="Ship\IShip.cs" />
+    <Compile Include="Ship\LocationAndTime.cs" />
+    <Compile Include="Ship\PlayerShip.cs" />
+    <Compile Include="Ship\ShipFunctions.cs" />
+    <Compile Include="UI\Bullet.cs" />
+    <Compile Include="UI\FiredEventArgs.cs" />
+    <Compile Include="Weapon\BasicWeapon.cs" />
+    <Compile Include="Weapon\IWeapon.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="BackGround\background.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BackGround\GamePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BackGround\SubmitScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MenuItems\IntroPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MenuItems\Leaderboards.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MenuItems\LevelSelect.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MenuItems\OptionSelect.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SplashScreenImage.jpg" />
+    <Content Include="UI\Icons\bomb-explosion.png" />
+    <Content Include="UI\Icons\bomb.png" />
+    <Content Include="UI\Icons\boom-1.avi" />
+    <Content Include="UI\Icons\boom-1.gif" />
+    <Content Include="UI\Icons\boss.png" />
+    <Content Include="UI\Icons\bullet.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0001.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0002.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0003.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0004.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0005.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0006.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0007.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0008.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0009.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0010.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0011.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0012.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0013.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0014.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0015.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0016.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0017.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0018.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0019.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0020.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0021.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0022.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0023.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0024.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0025.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0026.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0027.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0028.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0029.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0030.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0031.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0032.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0033.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0034.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0035.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0036.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0037.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0038.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0039.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0040.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0041.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0042.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0043.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0044.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0045.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0046.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0047.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0048.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0049.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0050.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0051.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0052.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0053.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0054.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0055.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0056.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0057.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0058.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0059.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0060.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0061.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0062.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0063.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0064.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0065.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0066.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0067.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0068.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0069.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0070.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0071.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0072.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0073.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0074.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0075.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0076.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0077.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0078.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0079.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0080.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0081.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0082.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0083.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0084.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0085.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0086.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0087.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0088.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0089.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0090.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0091.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0092.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0093.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0094.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0095.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0096.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0097.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0098.png" />
+    <Content Include="UI\Icons\deathAnimation\boom-1-0099.png" />
+    <Content Include="UI\Icons\emp-blast.png" />
+    <Content Include="UI\Icons\emp.png" />
+    <Content Include="UI\Icons\f-a-18.png" />
+    <Resource Include="UI\Icons\hornetLogo.png" />
+    <Content Include="UI\Icons\laser.png" />
+    <Content Include="UI\Icons\mig-17.png" />
+    <Content Include="UI\Icons\mig-19.png" />
+    <Content Include="UI\Icons\mig-21.png" />
+    <Content Include="UI\Icons\rural-cartoon.png" />
+    <Content Include="UI\Icons\su-34.png" />
+    <Content Include="UI\Icons\t-72.png" />
+    <Resource Include="UI\Icons\title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\ShipImages\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

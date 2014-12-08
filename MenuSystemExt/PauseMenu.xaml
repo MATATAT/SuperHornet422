@@ -1,0 +1,30 @@
+﻿<phone:PhoneApplicationPage 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+	xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+	x:Class="MenuSystem2.PauseMenu"
+	FontFamily="{StaticResource PhoneFontFamilyNormal}"
+	FontSize="{StaticResource PhoneFontSizeNormal}"
+	Foreground="{StaticResource PhoneForegroundBrush}"
+	Orientation="Portrait"
+	shell:SystemTray.IsVisible="True">
+
+	<!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+		<Rectangle Grid.RowSpan="3" Fill="DarkGray" Opacity="0.3" />
+        <Button x:Name="SaveAndQuit" Height="100" Content="Save and Quit" Background="#59000000" />
+        <Button x:Name="SaveAndReturn" Height="100" Grid.Row="1" Content="Save and Return" Background="#59000000" />
+        <Button x:Name="Return" Height="100" Grid.Row="2" Content="Return" Background="#59000000" />
+        <Image Margin="-215,0,-331,64" Source="hornetLogo.png" Stretch="Fill" Grid.RowSpan="3" Opacity="0.1"/>
+    </Grid>
+</phone:PhoneApplicationPage>
